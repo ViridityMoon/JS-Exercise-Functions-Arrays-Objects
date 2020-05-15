@@ -63,7 +63,7 @@ function temperatureCtoF(tempCelsius) {
   return Math.round(tempFahrenheit)
 }
 
-console.log(temperatureCtoF(24));
+// console.log(temperatureCtoF(24));
 
 /**
  * ### Challenge `temperatureInF`
@@ -82,10 +82,19 @@ console.log(temperatureCtoF(24));
  * 
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
-function temperatureInF(/* code here */) {
-  /* code here */
+// const tempFahrenheit = 
+// const tempCelsius = 
+function temperatureInF(temperature, unit) {
+  if (unit === 'F'){
+    return `${Math.round(temperature)}${unit}`
+  } else if(unit === 'C'){
+    
+    return `${Math.round(temperatureCtoF(temperature))}F`
+  }
 }
 
+// console.log(temperatureInF(88, 'F'))
+// console.log(temperatureInF(24, 'C'))
 
 /**
  * ### Challenge `makePersonObject`
@@ -103,27 +112,43 @@ function temperatureInF(/* code here */) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
-  /* code here */
-}
 
-/**
- * ### Challenge `getName`
- * 
- * @instructions
- * This function takes as its only argument
- * an object containing a `name` property,
- * and return a string that reads `Hello, my name is {name}`,
- * where `{name}` is the name stored in the object.
- * 
- * For example, if we invoke `getName`
- * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
- * the returned value should look like `Hello, my name is Leia`.
-*/
-function getName(/* code here */) {
-  /* code here */
-}
 
+// function makePersonObject(I, Name, Mail) {
+
+//   return {
+//     id: I,
+//     name: Name,
+//     email: Mail
+
+//   }
+// };
+
+
+// console.log(makePersonObject(5, 'Leia', 'leia@leia.com'))
+
+// /**
+//  * ### Challenge `getName`
+//  * 
+//  * @instructions
+//  * This function takes as its only argument
+//  * an object containing a `name` property,
+//  * and return a string that reads `Hello, my name is {name}`,
+//  * where `{name}` is the name stored in the object.
+//  * 
+//  * For example, if we invoke `getName`
+//  * passing { id: 1, name: 'Leia', email: 'leia@leia.com' } as the argument,
+//  * the returned value should look like `Hello, my name is Leia`.
+// */
+  // let id = 1;
+  // let name = 'Leia';
+  // let email = 'leia@leia.com'
+
+// function getName(object) {
+  
+//   return `Hello, my name is ${object.name}.`
+// }
+// console.log(getName({ id: 1, name: 'Leia', email: 'leia@leia.com' }));
 
 /**
  * ### Challenge `appleIndex`
@@ -140,9 +165,23 @@ function getName(/* code here */) {
  * passing in [ 'orange', 'grape', 'apple', 'banana', 'mango' ] as the argument,
  * the returned value should be: 2.
 */
-function appleIndex(/* code here */) {
-  /* code here */
-}
+// const fruits = [ 'orange', 'grape', 'apple', 'banana', 'mango' ]
+
+// function appleIndex(array) {
+//   // Iterate over the array
+//   for (i=0; i <= array.length-1; i++){
+//     // If array at this index is equal to the stiring apple, 
+//     if (array[i] === 'apple'){
+//       // Return index
+//       return i;
+//     }
+    
+//   }
+  
+
+// }
+
+// console.log(appleIndex(fruits));
 
 /**
  * ### Challenge `isItAnApple`
@@ -159,11 +198,22 @@ function appleIndex(/* code here */) {
  * passing in [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ] as the argument,
  * the returned value should be: [ false, true, false, false, true, false ].
 */
-function isItAnApple(/* code here */) {
-  /* code here */
-}
+// const fruits = ['orange', 'apple', 'banana', 'apples', 'apple', 'mango']
 
 
+// function isItAnApple(array) {
+//   let newFruits = [];
+//   for (i=0; i <= array.length-1; i++)
+//     if (array[i] === 'apple'){
+//     newFruits.push(true);
+//   }
+//     else if(array[i] != 'apple'){
+//     newFruits.push(false);
+//   } 
+//   return newFruits;
+// }
+
+// console.log(isItAnApple(fruits));
 
 
 // ⭐️ Example Test Data ⭐️
@@ -216,9 +266,12 @@ function get3rdCar(inventory) {
  * For example, if getCarInfoByIndex is invoked with the inventory and the number 0,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoByIndex(inventory, index) {
-  /* code here */
-}
+// function getCarInfoByIndex(inventory, index) {
+//   let car_make = inventory[index].car_make;
+//   let car_model = inventory[index].car_model;
+//   return `This is a ${car_make} ${car_model}.`
+// }
+// console.log(getCarInfoByIndex(inventory, 0))
 
 /**
  * ### Challenge `getLastCarInfo`
@@ -231,9 +284,14 @@ function getCarInfoByIndex(inventory, index) {
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
 */
-function getLastCarInfo(/* code here */) {
-  /* code here */
-}
+
+
+// function getLastCarInfo(inventory) {
+//   let car_make = inventory[inventory.length-1].car_make;
+//   let car_model = inventory[inventory.length-1].car_model;
+//   return `This is a ${car_make} ${car_model}.`
+// }
+// console.log(getLastCarInfo(inventory))
 
 /**
  * ### Challenge `getModelYears`
@@ -244,10 +302,15 @@ function getLastCarInfo(/* code here */) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * getModelYears returns an array containing all the 'car_year's in the inventory.
 */
-function getModelYears(/* code here */) {
-  /* code here */
-}
+function getModelYears(inventory) {
+  const modelYears = []
+  for (i=0; i <= inventory.length-1; i++){
 
+    modelYears.unshift(inventory[i].car_year);
+  }
+  return modelYears;
+}
+console.log(getModelYears(inventory))
 
 
 //************************* */
@@ -283,9 +346,16 @@ function getCarInfoById(/* code here */) {
  * with a `car_year` which is at most the given desired max year,
  * in the same order as they appear in the original inventory.
 */
-function getOlderCars(/* code here */) {
-  /* code here */
+function getOlderCars(inventory, year) {
+  const olderCars = []
+  for (i=0; i <= inventory.length-1; i++){
+    if (year < inventory[i].car_year){
+    olderCars.unshift(inventory[i].car_year)
+    }
+  }
+  return olderCars;
 }
+console.log(getOlderCars(inventory, 2000))
 
 /**
  * ### Challenge `getGermanCars`
